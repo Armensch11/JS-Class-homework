@@ -95,7 +95,7 @@ function nestedSum(arr) {
 function oddsByNewLength(arr) {
 	let oddsArr = [];
 	for (let i = 0; i < arr.length; i++) {
-		if (arr[i] && arr[i] % 2 !== 0) {
+		if (typeof arr[i] === 'number' && arr[i] && arr[i] % 2 !== 0) {
 			oddsArr.push(arr[i]);
 		}
 	}
@@ -103,4 +103,31 @@ function oddsByNewLength(arr) {
 	return oddsArr.map((item) => {
 		return (item = item * oddsArr.length);
 	});
+}
+
+let arr = oddsByNewLength([ 1, 2, 3, 4, 0, 5, 6, 9, 4, 10, 'sdfa' ]);
+console.log(arr);
+
+//Ex.7 tried using Object
+function oddsByNewLengthObj(arr) {
+	let oddsObj = {};
+	let k = 1;
+	for (let i = 0; i < arr.length; i++) {
+		if (arr[i] && arr[i] % 2 !== 0) {
+			oddsObj[arr[i]] = '';
+			k++;
+		}
+	}
+	oddsObj['size'] = --k;
+
+	console.log(oddsObj);
+	for (key in oddsObj) {
+		if (key !== 'size') {
+			oddsObj[key] = key * oddsObj.size;
+		}
+	}
+	return oddsObj;
+	//return oddsArr.map((item) => {
+	//	return (item = item * oddsArr.length);
+	//});
 }
