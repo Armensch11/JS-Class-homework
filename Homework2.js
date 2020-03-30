@@ -63,6 +63,17 @@ function largestProd(arr) {
 	return prod;
 }
 
+// Ex 4*
+function largestProdForAllAdj(arr) {
+	let prod = -Infinity;
+	for (let i = 1; i < arr.length - 1; i++) {
+		if (arr[i - 1] * arr[i] * arr[i + 1] > prod) {
+			prod = arr[i - 1] * arr[i] * arr[i + 1];
+		}
+	}
+	return prod;
+}
+
 // ex 5
 function missingNums(arr) {
 	let max = -Infinity;
