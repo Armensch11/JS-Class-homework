@@ -91,6 +91,7 @@ function nestedSum(arr) {
 	return sumArr;
 }
 
+// ex 7
 function oddsByNewLength(arr) {
 	let oddsArr = [];
 	for (let i = 0; i < arr.length; i++) {
