@@ -89,6 +89,22 @@ function missingNums(arr) {
 	return max - min + 1 - arr.length;
 }
 
+//ex5*
+function missingNums(arr) {
+	let min = +Infinity,
+		max = -Infinity;
+	for (let i = 0; i < arr.length; i++) {
+		arr[i] > max ? (max = arr[i]) : null;
+		arr[i] < min ? (min = arr[i]) : null;
+	}
+	let missingNumsArr = [];
+	for (let i = min; i <= max; i++) {
+		arr.indexOf(i) === -1 ? missingNumsArr.push(i) : null;
+	}
+	//console.log(missingNumsArr);
+	return missingNumsArr.length;
+}
+
 // ex 6.
 function nestedSum(arr) {
 	let sumArr = [];
