@@ -136,7 +136,7 @@ let arr = oddsByNewLength([ 1, 2, 3, 4, 0, 5, 6, 9, 4, 10, 'sdfa' ]);
 console.log(arr);
 
 //Ex. 7*
-function oddsByNewLength(arr) {
+function oddsByNewLengthForEach(arr) {
 	let oddsArr = [];
 	arr.forEach((item) => (item % 2 !== 0 ? oddsArr.push(item) : null));
 	return oddsArr.map((item) => item * oddsArr.length);
