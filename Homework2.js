@@ -141,6 +141,11 @@ function oddsByNewLengthForEach(arr) {
 	arr.forEach((item) => (item % 2 !== 0 ? oddsArr.push(item) : null));
 	return oddsArr.map((item) => item * oddsArr.length);
 }
+//Ex 7*
+function oddsByNewLengthFilter(arr) {
+	arr = arr.filter((item) => item % 2 !== 0);
+	return arr.map((item) => item * arr.length);
+}
 
 //Ex.7** tried using Object
 function oddsByNewLengthObj(arr) {
