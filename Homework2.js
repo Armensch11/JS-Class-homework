@@ -135,7 +135,14 @@ function oddsByNewLength(arr) {
 let arr = oddsByNewLength([ 1, 2, 3, 4, 0, 5, 6, 9, 4, 10, 'sdfa' ]);
 console.log(arr);
 
-//Ex.7 tried using Object
+//Ex. 7*
+function oddsByNewLength(arr) {
+	let oddsArr = [];
+	arr.forEach((item) => (item % 2 !== 0 ? oddsArr.push(item) : null));
+	return oddsArr.map((item) => item * oddsArr.length);
+}
+
+//Ex.7** tried using Object
 function oddsByNewLengthObj(arr) {
 	let oddsObj = {};
 	let k = 1;
@@ -154,7 +161,4 @@ function oddsByNewLengthObj(arr) {
 		}
 	}
 	return oddsObj;
-	//return oddsArr.map((item) => {
-	//	return (item = item * oddsArr.length);
-	//});
 }
