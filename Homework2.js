@@ -157,13 +157,14 @@ function oddsByNewLengthObj(arr) {
 			k++;
 		}
 	}
-	oddsObj['size'] = --k;
+	let size = Symbol('size');
+	oddsObj[size] = --k;
 
 	console.log(oddsObj);
 	for (key in oddsObj) {
-		if (key !== 'size') {
-			oddsObj[key] = key * oddsObj.size;
-		}
+		//if (key !== 'size') {
+		oddsObj[key] = key * oddsObj[size];
+		//}
 	}
 	return oddsObj;
 }
