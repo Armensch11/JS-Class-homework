@@ -146,6 +146,16 @@ function oddsByNewLengthFilter(arr) {
 	arr = arr.filter((item) => item % 2 !== 0);
 	return arr.map((item) => item * arr.length);
 }
+//Ex. 7**
+function oddsByNewLengthProto(arr) {
+	Array.prototype.oddsByNewLength = function() {
+		let newArr = this.filter((item) => item % 2 !== 0);
+
+		return newArr.map((item) => item * newArr.length);
+	};
+
+	return arr.oddsByNewLength();
+}
 
 //Ex.7** tried using Object
 function oddsByNewLengthObj(arr) {
