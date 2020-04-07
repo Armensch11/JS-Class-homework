@@ -51,16 +51,16 @@ function fiboArray(num) {
 
 //Ex. 4
 
-function flatTheArr(arr) {
-	let finalArr = [];
+function flatTheArr(arr, resArr = []) {
 	for (let i = 0; i < arr.length; i++) {
 		if (Array.isArray(arr[i])) {
-			finalArr.push(...flatTheArr(arr[i]));
+			resArr = flatTheArr(arr[i], resArr);
 		} else {
-			finalArr.push(arr[i]);
+			resArr.push(arr[i]);
 		}
 	}
-	return finalArr;
+	//console.log(resArr);
+	return resArr;
 }
 
 //Ex. 5
