@@ -14,7 +14,7 @@ function checkOdd(number) {
 
 //Ex. 2
 
-function findLowestPositive(arr, min) {
+function findLowestPositive(arr, min = +Infinity) {
 	if (arr[0] >= 0 && arr[0] < min) {
 		min = arr[0];
 	}
