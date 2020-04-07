@@ -25,7 +25,7 @@ function findLowestPositive(arr, min = +Infinity) {
 
 	return min === +Infinity ? -1 : min;
 }
-//console.log(findLowestPositive([ -56, -87, 2, -4, -3, 3, -2, -23, -105, 0, -55, -1 ], +Infinity));
+//console.log(findLowestPositive([ -56, -87, 2, -4, -3, 3, -2, -23, -105, 0, -55, -1 ]));
 
 //Ex. 3
 // function fiboRecursion(num) {
