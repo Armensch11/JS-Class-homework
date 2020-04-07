@@ -28,19 +28,30 @@ function findLowestPositive(arr, min) {
 //console.log(findLowestPositive([ -56, -87, 2, -4, -3, 3, -2, -23, -105, 0, -55, -1 ], +Infinity));
 
 //Ex. 3
-function fiboRecursion(num) {
-	if (num === 0) {
-		return 0;
-	}
-	if (num === 1) {
-		return 1;
-	}
-	if (num >= 2) {
-		return fiboRecursion(num - 1) + fiboRecursion(num - 2);
-	}
-}
+// function fiboRecursion(num) {
+// 	if (num === 0) {
+// 		return 0;
+// 	}
+// 	if (num === 1) {
+// 		return 1;
+// 	}
+// 	if (num >= 2) {
+// 		return fiboRecursion(num - 1) + fiboRecursion(num - 2);
+// 	}
+// }
 
 function fiboArray(num) {
+	function fiboRecursion(num) {
+		if (num === 0) {
+			return 0;
+		}
+		if (num === 1) {
+			return 1;
+		}
+		if (num >= 2) {
+			return fiboRecursion(num - 1) + fiboRecursion(num - 2);
+		}
+	}
 	let resArr = [];
 	for (let i = 1; i <= num; i++) {
 		resArr.push(fiboRecursion(i));
