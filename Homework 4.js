@@ -33,8 +33,8 @@ function invertObj(ob) {
 
 //Ex.3
 function FilterWithSort(arr) {
-	let filteredArr = arr.filter((item) => (item.readStatus ? item : null));
-	return filteredArr.sort((a, b) => b.percent - a.percent);
+	// let filteredArr = arr.filter((item) => (item.readStatus ? item : null));
+	return arr.filter((item) => (item.readStatus ? item : null)).sort((a, b) => b.percent - a.percent);
 }
 // console.log(
 // 	FilterWithSort([
