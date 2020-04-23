@@ -106,13 +106,12 @@ let nodes = [
 let setObj = {};
 function loopAgain(arr, lange, tempArr = [], i = 0, index = 0) {
 	for (; i < arr.length; i++) {
+		tempArr[index] = arr[i];
 		if (index < lange - 1) {
-			tempArr[index] = arr[i];
 			loopAgain(arr, lange, tempArr, i + 1, index + 1);
 		}
 		if (index === lange - 1) {
 			if (i < arr.length) {
-				tempArr[index] = arr[i];
 				setObj[tempArr] = tempArr.slice();
 				loopAgain(arr, lange, tempArr, i + 1, index);
 			}
@@ -121,7 +120,7 @@ function loopAgain(arr, lange, tempArr = [], i = 0, index = 0) {
 }
 loopAgain([ 1, 2, 3, 4, 5, 6 ], 4);
 let finalArr = Object.keys(setObj).map((el) => el.split(',').map((el) => (el = +el)));
-console.log(finalArr);
+// console.log(finalArr);
 
 //Ex.7
 function ObjectMap() {
