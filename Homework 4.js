@@ -102,29 +102,32 @@ let nodes = [
 // console.log(arrToTree(nodes));
 
 //Ex.6
-function allPlacements(arr, num, finalArr = [], tempArr = []) {
-	for (let i = 0; i < arr.length; i++) {
-		let tempArr2 = arr.slice(i + 1);
-
-		while (tempArr2.length >= num - 1) {
-			tempArr.push(arr[i]);
-
-			for (let j = 0; j < tempArr2.length; j++) {
-				tempArr.push(tempArr2[j]);
-				if (tempArr.length === num) {
-					finalArr.push(tempArr.slice(0));
-					tempArr.pop();
-				}
+//chi stacvum rekursian ughghel
+let setObj = {};
+function loopAgain(arr, lange, tempArr = [], i = 0, index = 0) {
+	for (; i < arr.length; i++) {
+		// if (tempArr[tempArr.length - 1] === arr[arr.length - 1]) {
+		// 	return;
+		// }
+		if (index < lange - 1) {
+			//debugger;
+			tempArr[index] = arr[i];
+			//console.log(`this is ${i}th depth of recursion and tempArr is ${tempArr} `);
+			loopAgain(arr, lange, tempArr, i + 1, index + 1);
+		}
+		if (index === lange - 1) {
+			if (i < arr.length) {
+				tempArr[index] = arr[i];
+				setObj[tempArr.join('')] = tempArr.slice();
+				//console.log(`this is ${index}th depth of recursion and tempArr is ${tempArr} `);
+				loopAgain(arr, lange, tempArr, i + 1, index);
 			}
-
-			tempArr = [];
-			tempArr2.shift();
 		}
 	}
-	return finalArr;
 }
-
-// console.log(allPlacements([ 1, 2, 3, 4, 5, 6, 7 ], 5));
+loopAgain([ 1, 2, 3, 4, 5, 6 ], 4);
+let finalArr = Object.keys(setObj).map((el) => el.split('').map((el) => (el = +el)));
+// console.log(finalArr);
 
 //Ex.7
 function ObjectMap() {
@@ -152,3 +155,14 @@ let newObj1 = newObj.map(function(key) {
 		return key;
 	}
 });
+
+////=========================
+//fibonacci recurtion with saving previous counts in array
+function fiboArr(n, holdArr = [ 1, 1 ]) {
+	if (!holdArr[n]) {
+		holdArr[n] = fiboArr(n - 1, holdArr) + fiboArr(n - 2, holdArr);
+		return holdArr[n];
+	} else {
+		return holdArr[n];
+	}
+}
