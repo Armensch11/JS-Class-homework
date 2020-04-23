@@ -103,23 +103,25 @@ let nodes = [
 
 //Ex.6
 //chi stacvum rekursian ughghel
-let setObj = {};
-function loopAgain(arr, lange, tempArr = [], i = 0, index = 0) {
+function loopAgain(arr, lange, tempArr = [], i = 0, index = 0, setObj = {}) {
 	for (; i < arr.length; i++) {
 		tempArr[index] = arr[i];
 		if (index < lange - 1) {
-			loopAgain(arr, lange, tempArr, i + 1, index + 1);
+			loopAgain(arr, lange, tempArr, i + 1, index + 1, setObj);
 		}
+
 		if (index === lange - 1) {
-			if (i < arr.length) {
-				setObj[tempArr] = tempArr.slice();
-				loopAgain(arr, lange, tempArr, i + 1, index);
-			}
+			setObj[tempArr] = tempArr.slice();
+			loopAgain(arr, lange, tempArr, i + 1, index, setObj);
 		}
 	}
+	return Object.keys(setObj).map((el) => el.split(',').map((el) => (el = +el)));
 }
-loopAgain([ 1, 2, 3, 4, 5, 6 ], 4);
-let finalArr = Object.keys(setObj).map((el) => el.split(',').map((el) => (el = +el)));
+
+let finalArr = loopAgain([ 1, 2, 3, 4, 5, 6 ], 4);
+
+// loopAgain([ 1, 2, 3, 4, 5, 6 ], 4);
+// let finalArr = Object.keys(setObj).map((el) => el.split(',').map((el) => (el = +el)));
 // console.log(finalArr);
 
 //Ex.7
