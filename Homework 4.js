@@ -106,28 +106,22 @@ let nodes = [
 let setObj = {};
 function loopAgain(arr, lange, tempArr = [], i = 0, index = 0) {
 	for (; i < arr.length; i++) {
-		// if (tempArr[tempArr.length - 1] === arr[arr.length - 1]) {
-		// 	return;
-		// }
 		if (index < lange - 1) {
-			//debugger;
 			tempArr[index] = arr[i];
-			//console.log(`this is ${i}th depth of recursion and tempArr is ${tempArr} `);
 			loopAgain(arr, lange, tempArr, i + 1, index + 1);
 		}
 		if (index === lange - 1) {
 			if (i < arr.length) {
 				tempArr[index] = arr[i];
-				setObj[tempArr.join('')] = tempArr.slice();
-				//console.log(`this is ${index}th depth of recursion and tempArr is ${tempArr} `);
+				setObj[tempArr] = tempArr.slice();
 				loopAgain(arr, lange, tempArr, i + 1, index);
 			}
 		}
 	}
 }
 loopAgain([ 1, 2, 3, 4, 5, 6 ], 4);
-let finalArr = Object.keys(setObj).map((el) => el.split('').map((el) => (el = +el)));
-// console.log(finalArr);
+let finalArr = Object.keys(setObj).map((el) => el.split(',').map((el) => (el = +el)));
+console.log(finalArr);
 
 //Ex.7
 function ObjectMap() {
