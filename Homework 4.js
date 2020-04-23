@@ -108,9 +108,7 @@ function loopAgain(arr, lange, tempArr = [], i = 0, index = 0, setObj = {}) {
 		tempArr[index] = arr[i];
 		if (index < lange - 1) {
 			loopAgain(arr, lange, tempArr, i + 1, index + 1, setObj);
-		}
-
-		if (index === lange - 1) {
+		} else {
 			setObj[tempArr] = tempArr.slice();
 			loopAgain(arr, lange, tempArr, i + 1, index, setObj);
 		}
