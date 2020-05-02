@@ -46,6 +46,7 @@ function binSearchRec(arr, num, iCurrent = (iCurrent = Math.floor((arr.length - 
 	}
 }
 
+//mi indexov
 function binSearchRec(arr, num, iCurrent = Math.floor((arr.length - 1) / 2)) {
 	if (arr[iCurrent] === num) {
 		return iCurrent;
