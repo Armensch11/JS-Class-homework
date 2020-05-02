@@ -33,3 +33,28 @@ function binSearchRec(arr, num, iMax = arr.length, iMin = 0, iCurrent = 0) {
 
 // console.log(binSearchRec(check, 'k'));
 // console.log(check.indexOf('k'));
+function binSearchRec(arr, num, iCurrent = (iCurrent = Math.floor((arr.length - 1) / 2))) {
+	if (arr[iCurrent] === num) {
+		return iCurrent;
+	}
+
+	// debugger;
+	if (arr[iCurrent] >= num) {
+		return binSearchRec(arr, num, Math.floor((iCurrent + arr.length - 1) / 2));
+	} else {
+		return binSearchRec(arr, num, Math.floor(iCurrent / 2));
+	}
+}
+
+function binSearchRec(arr, num, iCurrent = Math.floor((arr.length - 1) / 2)) {
+	if (arr[iCurrent] === num) {
+		return iCurrent;
+	}
+
+	// debugger;
+	if (arr[iCurrent] < num) {
+		return binSearchRec(arr, num, iCurrent + Math.floor(iCurrent / 2));
+	} else {
+		return binSearchRec(arr, num, Math.floor(iCurrent / 2));
+	}
+}
