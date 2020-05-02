@@ -27,7 +27,6 @@ function binSearchRec(arr, num, iMax = arr.length, iMin = 0, iCurrent = 0) {
 	if (arr[iCurrent] >= num) {
 		return binSearchRec(arr, num, (iMax = iCurrent - 1), iMin, iCurrent);
 	} else {
-		iMin = iCurrent + 1;
 		return binSearchRec(arr, num, iMax, (iMin = iCurrent + 1), iCurrent);
 	}
 }
