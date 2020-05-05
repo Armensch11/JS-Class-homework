@@ -3,7 +3,7 @@
 function uniqueCheck(...arr) {
 	return Array.from(new Set(arr)).length === arr.length ? true : false;
 }
-console.log(uniqueCheck('', NaN, 10, 'adfg', null, '    ', 'ef', 'Ef'));
+console.log(uniqueCheck('', NaN, 10, 'adfg', null, '    ', 'ef', null, 'Ef'));
 //=======================
 
 //Ex.2
@@ -23,11 +23,7 @@ function checkDrom(str) {
 
 function findMatch(word, list) {
 	let check = list.map((el) => el.split('').sort().join(''));
-	// console.log(check);
 	let checkWord = word.split('').sort().join('');
-	// console.log(checkWord);
-	// console.log(list);
-	// console.log(check);
 	let indexArr = check
 		.map((el, index) => (el === checkWord ? index : undefined))
 		.filter((index) => (index ? index : null));
