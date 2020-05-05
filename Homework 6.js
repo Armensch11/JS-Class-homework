@@ -8,7 +8,7 @@ console.log(uniqueCheck('', NaN, 10, 'adfg', null, '    ', 'ef', null, 'Ef'));
 
 //Ex.2
 function evenSum(...arr) {
-	return arr.reduce((sum, item) => (!(item % 2) ? (sum += item ** 2) : (sum += 0)), 0);
+	return arr.reduce((sum, item) => (!(Math.sqrt(item) % 2) ? (sum += item) : (sum += 0)), 0);
 }
 // console.log(evenSum(2, 3, 4, 5, 2, 2));
 //============================
