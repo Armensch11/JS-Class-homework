@@ -55,7 +55,7 @@ class Book {
 //Ex.2
 class StudentOld {
 	constructor(id, name, balance = 0) {
-		(this.id = id), (this.name = name), (this.balance = balance);
+		(this._id = id), (this.name = name), (this.balance = balance);
 	}
 	get balance() {
 		return this._balance;
@@ -66,6 +66,9 @@ class StudentOld {
 		} else {
 			this._balance = 0;
 		}
+	}
+	get id() {
+		return this._id;
 	}
 	credit(amount) {
 		if (amount > 0) {
